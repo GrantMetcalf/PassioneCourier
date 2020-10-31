@@ -1,13 +1,16 @@
 package com.PassioneCourier.group2.Entity.unlabeled;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class CourierHistory {
+public class CourierHistory implements Serializable {
 
     private char name;
     private int from_location_ID, to_location_ID, driverID, helperID, days, product_id;
     private LocalDate dispatchTime, deliverTime;
     private float price;
+
+    private CourierHistory(){}
 
     private CourierHistory(Builder builder) {
         this.name = builder.name;

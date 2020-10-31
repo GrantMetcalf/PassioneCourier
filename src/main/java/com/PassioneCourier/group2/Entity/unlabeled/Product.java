@@ -1,9 +1,13 @@
 package com.PassioneCourier.group2.Entity.unlabeled;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
 
     private int product_ID;
     private String product_name, product_description, product_type;
+
+    private Product(){}
 
     private Product(Builder builder) {
         this.product_ID = builder.product_ID;
@@ -37,7 +41,6 @@ public class Product {
                 ", product_type='" + product_type + '\'' +
                 '}';
     }
-
     public static class Builder {
         private int product_ID;
         private String product_name, product_description, product_type;
